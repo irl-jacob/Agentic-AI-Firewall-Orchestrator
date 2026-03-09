@@ -433,7 +433,25 @@ AFO_DRY_RUN=1 ./afo
 ```
 
 ---
+## 📸 Screenshots
 
+<div align="center">
+
+### Main Interface
+<img src="https://github.com/irl-jacob/Agentic-AI-Firewall-Orchestrator/raw/42b73aa083392c4cbc7add56db4e470a1fd47ba4/screenshots/screenshot_20260310_013021.jpg" width="900">
+
+### Rules & Monitoring Panel
+<img src="https://github.com/irl-jacob/Agentic-AI-Firewall-Orchestrator/raw/42b73aa083392c4cbc7add56db4e470a1fd47ba4/screenshots/screenshot_20260310_013203.jpg" width="900">
+
+### Learning & Insights System
+<img src="https://github.com/irl-jacob/Agentic-AI-Firewall-Orchestrator/raw/42b73aa083392c4cbc7add56db4e470a1fd47ba4/screenshots/screenshot_20260310_013313.jpg" width="900">
+
+### Configuration View
+<img src="https://github.com/irl-jacob/Agentic-AI-Firewall-Orchestrator/raw/42b73aa083392c4cbc7add56db4e470a1fd47ba4/screenshots/screenshot_20260310_013411.jpg" width="900">
+
+</div>
+
+---
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -459,7 +477,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**Made with ❤️ by the AFO Team**
+**Made with ❤️ by Jacob**
 
 [![GitHub Stars](https://img.shields.io/github/stars/irl-jacob/Autonomous-Firewall-Orchestrator?style=social)](https://github.com/irl-jacob/Autonomous-Firewall-Orchestrator/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/irl-jacob/Autonomous-Firewall-Orchestrator?style=social)](https://github.com/irl-jacob/Autonomous-Firewall-Orchestrator/network/members)
