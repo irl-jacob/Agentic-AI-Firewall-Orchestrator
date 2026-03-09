@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div align="center">
 
 # 🛡️ AFO - Agentic Firewall Orchestrator
@@ -364,47 +363,6 @@ get_learning_metrics()
 [![nftables](https://img.shields.io/badge/nftables-Latest-FCC624?style=flat-square&logo=linux&logoColor=black)](https://netfilter.org/projects/nftables/)
 [![iptables](https://img.shields.io/badge/iptables-Legacy-FCC624?style=flat-square&logo=linux&logoColor=black)](https://netfilter.org/projects/iptables/)
 
----
-
-## 📊 Project Statistics
-
-```
-📁 Project Structure
-├── 62 files changed in last commit
-├── 3,854 lines added
-├── 540 lines removed
-├── 4 security presets
-├── 22+ MCP agent tools ⭐
-└── 495 total tests
-
-🔌 MCP Tools (22+)
-├── Rule Management: 5 tools
-├── Preset Configuration: 5 tools
-├── Learning System: 7 tools
-├── GeoIP Filtering: 2 tools
-├── Domain Blocking: 2 tools
-└── Bulk Operations: 3 tools
-
-✅ Test Coverage
-├── Core Tests: 83/83 (100%)
-├── Overall Tests: 403/495 (81.4%)
-├── MCP Tools: 27/27 (100%)
-├── Config Manager: 18/18 (100%)
-├── Firewall Service: 3/3 (100%)
-├── Bulk Operations: 17/17 (100%)
-└── Slash Commands: 20/20 (100%)
-
-🧠 Learning System
-├── Pattern Storage: ✅ Working
-├── Pattern Retrieval: ✅ Working
-├── Pattern Learner: ✅ Working
-├── Insight Engine: ✅ Working
-├── Evidence Updates: ✅ Working
-├── Feedback System: ✅ Working
-└── Persistence: ✅ Working
-```
-
----
 
 ## 📚 Documentation
 
@@ -440,21 +398,6 @@ python -m pytest tests/ -v
 # Run specific test suite
 python -m pytest tests/test_mcp_tools.py -v
 ```
-
-### Running Tests
-
-```bash
-# All tests
-python -m pytest tests/ -v
-
-# Core tests only
-python -m pytest tests/test_mcp_tools.py tests/test_config_manager.py tests/test_firewall_service.py tests/test_bulk_operations.py tests/test_slash_commands.py -v
-
-# With coverage
-python -m pytest tests/ --cov=. --cov-report=html
-```
-
----
 
 ## 🐛 Troubleshooting
 
