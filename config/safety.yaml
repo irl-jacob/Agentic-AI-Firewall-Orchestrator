@@ -1,0 +1,12 @@
+# Safety Configuration for AFO
+
+# Allowlist: Entities that must NEVER be blocked
+# The agent will refuse to deploy any DROP/REJECT rule targeting these
+allowlist:
+  # Localhost only - protect against self-lockout
+  - "127.0.0.1"
+  - "::1"
+
+  # Add your management IPs here if needed
+  # Example: - "192.168.1.100"
+

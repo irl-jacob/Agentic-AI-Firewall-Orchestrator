@@ -1,0 +1,111 @@
+{
+  "name": "iot_smart_home",
+  "version": "1.0",
+  "description": "IoT device segmentation and protection - restricts IoT devices to local network only",
+  "metadata": {
+    "author": "AFO",
+    "created": "2024-01-01",
+    "risk_level": "medium",
+    "use_case": "IoT devices, smart home, IP cameras, smart speakers"
+  },
+  "rules": [
+    {
+      "name": "block_iot_ssh",
+      "description": "Block SSH access to IoT devices",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 22,
+      "source": null,
+      "destination": null,
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "name": "block_iot_telnet",
+      "description": "Block Telnet access to IoT devices",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 23,
+      "source": null,
+      "destination": null,
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "name": "block_iot_http",
+      "description": "Block HTTP access to IoT web interfaces from external",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 80,
+      "source": null,
+      "destination": null,
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "name": "block_iot_https",
+      "description": "Block HTTPS access to IoT web interfaces from external",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 443,
+      "source": null,
+      "destination": null,
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "name": "block_upnp",
+      "description": "Block UPnP (security risk)",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "UDP",
+      "port": 1900,
+      "source": null,
+      "destination": null,
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "name": "allow_ntp",
+      "description": "Allow NTP for time synchronization",
+      "action": "ACCEPT",
+      "direction": "OUTBOUND",
+      "protocol": "UDP",
+      "port": 123,
+      "source": null,
+      "destination": null,
+      "priority": 200,
+      "enabled": true
+    },
+    {
+      "name": "allow_dns",
+      "description": "Allow DNS queries",
+      "action": "ACCEPT",
+      "direction": "OUTBOUND",
+      "protocol": "UDP",
+      "port": 53,
+      "source": null,
+      "destination": null,
+      "priority": 200,
+      "enabled": true
+    },
+    {
+      "name": "allow_mdns",
+      "description": "Allow mDNS for local discovery",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "UDP",
+      "port": 5353,
+      "source": null,
+      "destination": null,
+      "priority": 200,
+      "enabled": true
+    }
+  ],
+  "geoip_blocks": ["CN", "RU", "KP"],
+  "domain_blocks": []
+}

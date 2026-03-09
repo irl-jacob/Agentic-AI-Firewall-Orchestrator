@@ -1,0 +1,111 @@
+{
+  "name": "home_basic",
+  "version": "1.0",
+  "description": "Simple protection for home networks - blocks common attack vectors while allowing normal internet usage",
+  "metadata": {
+    "author": "AFO",
+    "created": "2024-01-01",
+    "risk_level": "low",
+    "use_case": "Home networks, small offices, basic protection"
+  },
+  "rules": [
+    {
+      "name": "block_ssh_external",
+      "description": "Block SSH access from external networks",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 22,
+      "source": null,
+      "destination": null,
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "name": "block_telnet",
+      "description": "Block insecure Telnet protocol",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 23,
+      "source": null,
+      "destination": null,
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "name": "block_rdp_external",
+      "description": "Block RDP access from external networks",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 3389,
+      "source": null,
+      "destination": null,
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "name": "block_smb",
+      "description": "Block SMB/CIFS file sharing",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 445,
+      "source": null,
+      "destination": null,
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "name": "block_netbios",
+      "description": "Block NetBIOS",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 139,
+      "source": null,
+      "destination": null,
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "name": "allow_http",
+      "description": "Allow HTTP traffic",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 80,
+      "source": null,
+      "destination": null,
+      "priority": 200,
+      "enabled": true
+    },
+    {
+      "name": "allow_https",
+      "description": "Allow HTTPS traffic",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 443,
+      "source": null,
+      "destination": null,
+      "priority": 200,
+      "enabled": true
+    },
+    {
+      "name": "allow_dns",
+      "description": "Allow DNS queries",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "UDP",
+      "port": 53,
+      "source": null,
+      "destination": null,
+      "priority": 200,
+      "enabled": true
+    }
+  ],
+  "geoip_blocks": ["CN", "RU", "KP", "IR"],
+  "domain_blocks": []
+}

@@ -1,0 +1,99 @@
+{
+  "name": "development",
+  "version": "1.0",
+  "description": "Minimal restrictions for development and testing environments - allows common dev ports and services",
+  "metadata": {
+    "author": "AFO",
+    "created": "2024-01-01",
+    "risk_level": "high",
+    "use_case": "Development environments, testing, local development"
+  },
+  "rules": [
+    {
+      "name": "allow_dev_port_3000",
+      "description": "Allow React/Node.js dev server (3000)",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 3000,
+      "source": null,
+      "destination": null,
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "name": "allow_dev_port_8080",
+      "description": "Allow common dev server (8080)",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 8080,
+      "source": null,
+      "destination": null,
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "name": "allow_dev_port_5000",
+      "description": "Allow Flask/Python dev server (5000)",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 5000,
+      "source": null,
+      "destination": null,
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "name": "allow_dev_port_8000",
+      "description": "Allow Django/Python dev server (8000)",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 8000,
+      "source": null,
+      "destination": null,
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "name": "allow_dev_port_9000",
+      "description": "Allow common dev server (9000)",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 9000,
+      "source": null,
+      "destination": null,
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "name": "allow_http",
+      "description": "Allow HTTP traffic",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 80,
+      "source": null,
+      "destination": null,
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "name": "allow_https",
+      "description": "Allow HTTPS traffic",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 443,
+      "source": null,
+      "destination": null,
+      "priority": 100,
+      "enabled": true
+    }
+  ],
+  "geoip_blocks": [],
+  "domain_blocks": []
+}

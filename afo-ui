@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+"""AFO - Autonomous Firewall Orchestrator
+
+Single unified command to launch AFO with all features.
+"""
+
+import sys
+import os
+
+# Add project root to path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+def main():
+    """Launch AFO TUI."""
+    from ui.tui.app import AFOApp
+
+    app = AFOApp()
+    app.run()
+
+if __name__ == "__main__":
+    main()

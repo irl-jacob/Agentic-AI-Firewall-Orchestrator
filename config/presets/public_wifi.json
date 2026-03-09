@@ -1,0 +1,135 @@
+{
+  "name": "public_wifi",
+  "version": "1.0",
+  "description": "Strict security for public WiFi/cafe environments - client isolation and minimal allowed services",
+  "metadata": {
+    "author": "AFO",
+    "created": "2024-01-01",
+    "risk_level": "medium",
+    "use_case": "Public WiFi, cafes, shared networks, guest networks"
+  },
+  "rules": [
+    {
+      "name": "block_ssh",
+      "description": "Block SSH access",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 22,
+      "source": null,
+      "destination": null,
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "name": "block_telnet",
+      "description": "Block Telnet access",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 23,
+      "source": null,
+      "destination": null,
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "name": "block_rdp",
+      "description": "Block RDP access",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 3389,
+      "source": null,
+      "destination": null,
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "name": "block_smb",
+      "description": "Block SMB file sharing",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 445,
+      "source": null,
+      "destination": null,
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "name": "block_netbios",
+      "description": "Block NetBIOS",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 139,
+      "source": null,
+      "destination": null,
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "name": "block_bittorrent",
+      "description": "Block BitTorrent default port",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 6881,
+      "source": null,
+      "destination": null,
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "name": "block_vnc",
+      "description": "Block VNC remote access",
+      "action": "DROP",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 5900,
+      "source": null,
+      "destination": null,
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "name": "allow_http",
+      "description": "Allow HTTP traffic",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 80,
+      "source": null,
+      "destination": null,
+      "priority": 200,
+      "enabled": true
+    },
+    {
+      "name": "allow_https",
+      "description": "Allow HTTPS traffic",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "TCP",
+      "port": 443,
+      "source": null,
+      "destination": null,
+      "priority": 200,
+      "enabled": true
+    },
+    {
+      "name": "allow_dns",
+      "description": "Allow DNS queries",
+      "action": "ACCEPT",
+      "direction": "INBOUND",
+      "protocol": "UDP",
+      "port": 53,
+      "source": null,
+      "destination": null,
+      "priority": 200,
+      "enabled": true
+    }
+  ],
+  "geoip_blocks": [],
+  "domain_blocks": []
+}

@@ -1,0 +1,13 @@
+#!/bin/bash
+# AFO Launcher - Single command to run AFO
+# Activates virtual environment and launches the TUI
+
+cd "$(dirname "$0")"
+
+# Activate virtual environment if it exists
+if [ -d ".venv" ]; then
+    source .venv/bin/activate
+fi
+
+# Launch AFO TUI
+afo-ui

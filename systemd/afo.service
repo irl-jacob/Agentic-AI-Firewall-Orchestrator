@@ -1,0 +1,17 @@
+[Unit]
+Description=AFO - Autonomous Firewall Orchestrator
+Documentation=https://github.com/yourusername/afo
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/local/bin/afo-daemon
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+# Environment=OLLAMA_HOST=http://localhost:11434
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,97 @@
+services:
+  mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: afo-mcp-server
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8765:8765"  # Localhost only for security
+    environment:
+      - MCP_HOST=0.0.0.0
+      - MCP_PORT=8765
+      - REQUIRE_APPROVAL=1
+      - ROLLBACK_TIMEOUT=30
+    volumes:
+      # Mount for development hot-reload
+      - ./afo_mcp:/app/afo_mcp:ro
+      # Persist backups
+      - afo-backups:/var/lib/afo/backups
+    # Required for nftables access - uncomment on machines that allow it
+    # cap_add:
+    #   - NET_ADMIN
+    networks:
+      - afo-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; s=socket.socket(); s.connect(('localhost', 8765)); s.close()"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+  # Streamlit UI
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: afo-ui
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8501:8501"
+    environment:
+      - OLLAMA_HOST=http://host.docker.internal:11434
+      - OLLAMA_MODEL=qwen2.5-coder:3b
+      - EMBED_MODEL=nomic-embed-text
+    volumes:
+      - ./agents:/app/agents:ro
+      - ./db:/app/db:ro
+      - ./ui:/app/ui:ro
+      - ./docs:/app/docs:ro
+      - ./afo_mcp:/app/afo_mcp:ro
+      - afo-chromadb:/app/.chromadb
+    command: streamlit run ui/app.py --server.port=8501 --server.address=0.0.0.0
+    networks:
+      - afo-network
+    depends_on:
+      - mcp-server
+
+  # Test runner service
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: afo-test
+    profiles:
+      - test
+    volumes:
+      - ./afo_mcp:/app/afo_mcp:ro
+      - ./tests:/app/tests:ro
+    command: pytest tests/ -v --tb=short
+    networks:
+      - afo-network
+
+  # Development shell with nftables
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: afo-dev
+    profiles:
+      - dev
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app
+    cap_add:
+      - NET_ADMIN
+    command: /bin/bash
+    networks:
+      - afo-network
+
+networks:
+  afo-network:
+    driver: bridge
+
+volumes:
+  afo-backups:
+  afo-chromadb:

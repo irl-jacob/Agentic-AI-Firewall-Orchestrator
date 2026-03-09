@@ -1,0 +1,27 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/app:cached
+      - afo-backups:/var/lib/afo/backups
+      - afo-vectorstore:/app/.vectorstore
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - OLLAMA_HOST=http://host.docker.internal:11434
+      - OLLAMA_MODEL=qwen2.5-coder:3b
+      - EMBED_MODEL=nomic-embed-text
+      - MCP_HOST=0.0.0.0
+      - MCP_PORT=8765
+    ports:
+      - "8765:8765"
+      - "8501:8501"
+    command: sleep infinity
+
+volumes:
+  afo-backups:
+  afo-vectorstore:
