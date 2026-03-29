@@ -465,25 +465,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [OPNsense](https://opnsense.org/) - Open source firewall platform
 - [Ollama](https://ollama.ai/) - Local LLM inference
 
----
-
-## 📞 Support
-
-- 🐛 [Report Issues](https://github.com/irl-jacob/Autonomous-Firewall-Orchestrator/issues)
-- 💬 [Discussions](https://github.com/irl-jacob/Autonomous-Firewall-Orchestrator/discussions)
-- 📧 Contact: [Your Email]
-
----
-
 <div align="center">
-
-**Made with ❤️ by Jacob**
-
-[![GitHub Stars](https://img.shields.io/github/stars/irl-jacob/Autonomous-Firewall-Orchestrator?style=social)](https://github.com/irl-jacob/Autonomous-Firewall-Orchestrator/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/irl-jacob/Autonomous-Firewall-Orchestrator?style=social)](https://github.com/irl-jacob/Autonomous-Firewall-Orchestrator/network/members)
-[![GitHub Watchers](https://img.shields.io/github/watchers/irl-jacob/Autonomous-Firewall-Orchestrator?style=social)](https://github.com/irl-jacob/Autonomous-Firewall-Orchestrator/watchers)
-
-</div>
-=======
-# Agentic-AI-Firewall-Orchestrator-
->>>>>>> 2696fd58ab00dc3daec7b91da075a81d9f3be612
