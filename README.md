@@ -1,59 +1,42 @@
-<div align="center">
+# AFO - Agentic Firewall Orchestrator
 
-# 🛡️ AFO - Agentic Firewall Orchestrator
+AI-powered firewall management using Model Context Protocol (MCP) and adaptive learning.
 
-**AI-powered firewall management using Model Context Protocol (MCP) and adaptive learning**
+[![License](https://img.shields.io/badge/License-MIT-blue)](./LICENSE)
+[![Tests](https://img.shields.io/badge/Tests-403%2F495%20Passing-success)](./TEST_RESULTS.md)
 
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![FastMCP](https://img.shields.io/badge/FastMCP-2.14.5-00ADD8?style=for-the-badge&logo=fastapi&logoColor=white)](https://github.com/jlowin/fastmcp)
-[![Textual](https://img.shields.io/badge/Textual-7.5.0-009485?style=for-the-badge&logo=python&logoColor=white)](https://textual.textualize.io/)
-[![SQLModel](https://img.shields.io/badge/SQLModel-0.0.32-CC2927?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlmodel.tiangolo.com/)
+## Overview
 
-[![Tests](https://img.shields.io/badge/Tests-403%2F495%20Passing-success?style=for-the-badge&logo=pytest)](./TEST_RESULTS.md)
-[![Core Tests](https://img.shields.io/badge/Core%20Tests-83%2F83%20Passing-brightgreen?style=for-the-badge&logo=checkmarx)](./TEST_RESULTS.md)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](./LICENSE)
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge&logo=statuspage)](./TEST_RESULTS.md)
+AFO is an agentic firewall orchestration platform powered by Model Context Protocol (MCP). It combines AI agents, natural language processing, and adaptive learning to manage complex firewall configurations. The system uses MCP to expose 22+ tools that enable intelligent, agent-driven network security management.
 
-[Features](#-features) • [Quick Start](#-quick-start) • [Installation](#-installation) • [Documentation](#-documentation) • [Architecture](#-architecture)
+### Key Features
 
-</div>
+- **MCP-Powered Architecture** - 22+ tools exposed via Model Context Protocol
+- **AI Agent System** - LLM-based agents process natural language and make decisions
+- **Web Search Validation** - AI-powered research before implementation
+- **Adaptive Learning** - Automatically learns from logs and adapts behavior
+- **Preset Configurations** - Apply security profiles with one command
+- **Terminal Interface** - Modern TUI built with Textual
+- **Safety First** - Built-in validation prevents dangerous configurations
+- **Multi-Backend** - Supports OPNsense, nftables, and iptables
+- **Pattern Detection** - Discovers attack patterns and suggests rules
 
----
+## Quick Start
 
-## 🎯 Overview
-
-AFO is an **agentic firewall orchestration platform** powered by Model Context Protocol (MCP). It combines AI agents, natural language processing, and adaptive learning to manage complex firewall configurations. The system uses MCP to expose 22+ tools that enable intelligent, agent-driven network security management.
-
-### ✨ What Makes AFO Special
-
-🤖 **MCP-Powered Architecture** - 22+ tools exposed via Model Context Protocol
-🧠 **AI Agent System** - LLM-based agents process natural language and make decisions
-🔍 **Web Search Validation** - AI-powered research before implementation
-📚 **Adaptive Learning** - Automatically learns from logs and adapts behavior
-⚡ **Preset Configurations** - Apply security profiles with one command
-🎨 **Beautiful TUI** - Modern terminal interface built with Textual
-🔒 **Safety First** - Built-in validation prevents dangerous configurations
-🔌 **Multi-Backend** - Supports OPNsense, nftables, and iptables
-📊 **Pattern Detection** - Discovers attack patterns and suggests rules
-
----
-
-## 🚀 Quick Start
-
-### One Command Launch
+Launch the AFO system:
 
 ```bash
 ./afo
 ```
 
-That's it! This launches the complete AFO system with:
-- ✅ MCP server with 22+ agent tools
-- ✅ Interactive TUI for natural language firewall management
-- ✅ AI-powered adaptive learning system
-- ✅ Real-time rule and threat monitoring
-- ✅ Built-in safety features and rollback capability
+This starts the complete system including:
+- MCP server with 22+ agent tools
+- Interactive TUI for natural language firewall management
+- AI-powered adaptive learning system
+- Real-time rule and threat monitoring
+- Built-in safety features and rollback capability
 
-### First Commands
+### Basic Commands
 
 ```bash
 /config list                # List available presets
@@ -66,72 +49,51 @@ That's it! This launches the complete AFO system with:
 
 | Key | Action |
 |-----|--------|
-| **F1** | Model Selection |
-| **F2** | Toggle Rules Panel |
-| **F3** | Toggle Threats Panel |
-| **F4** | Toggle DRY/LIVE Mode |
-| **Ctrl+R** | Refresh Rules |
-| **Q** | Quit |
+| F1 | Model Selection |
+| F2 | Toggle Rules Panel |
+| F3 | Toggle Threats Panel |
+| F4 | Toggle DRY/LIVE Mode |
+| Ctrl+R | Refresh Rules |
+| Q | Quit |
 
----
+## Features
 
-## 🎁 Features
+### Core Capabilities
 
-### 🔧 Core Capabilities
-
-<table>
-<tr>
-<td width="50%">
-
-**🎛️ Preset Configuration System**
+**Preset Configuration System**
 - 4 ready-to-use security profiles
 - One-command deployment
 - Automatic rollback on failure
 - Safety validation built-in
 
-</td>
-<td width="50%">
-
-**🧠 Adaptive Learning**
+**Adaptive Learning**
 - AI agents analyze patterns from logs
 - LLM-powered insights and recommendations
 - Auto-configuration modes with safety
 - User feedback learning loop
 
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-**🌍 GeoIP Filtering**
+**GeoIP Filtering**
 - Block/allow by country
 - Automatic IP list updates
 - 2-letter country codes
 - Bulk operations support
 
-</td>
-<td width="50%">
-
-**🚫 Domain Blocking**
+**Domain Blocking**
 - DNS-level filtering
 - Wildcard support
 - Category blocking
 - Host alias integration
 
-</td>
-</tr>
-</table>
-
-### 📦 Available Presets
+### Available Presets
 
 | Preset | Description | Rules | Use Case |
 |--------|-------------|-------|----------|
-| 🏠 **home_basic** | Simple home protection | 8 | Home networks, basic security |
-| 💻 **development** | Dev-friendly config | 7 | Development environments |
-| ☕ **public_wifi** | Public WiFi security | 10 | Cafes, shared spaces |
-| 🔌 **iot_smart_home** | IoT segmentation | 8 | Smart home devices |
+| home_basic | Simple home protection | 8 | Home networks, basic security |
+| development | Dev-friendly config | 7 | Development environments |
+| public_wifi | Public WiFi security | 10 | Cafes, shared spaces |
+| iot_smart_home | IoT segmentation | 8 | Smart home devices |
 
-### 🎯 Slash Commands
+### Slash Commands
 
 ```bash
 # Configuration Presets
@@ -153,9 +115,7 @@ list_learned_patterns, approve_insight, get_learning_metrics
 /help or /
 ```
 
----
-
-## 📥 Installation
+## Installation
 
 ### Prerequisites
 
@@ -224,9 +184,7 @@ python verify_logging.py
 ./afo
 ```
 
----
-
-## 🏗️ Architecture
+## Architecture
 
 ### MCP-First Design
 
@@ -241,7 +199,7 @@ AFO is built on **Model Context Protocol (MCP)**, exposing all functionality thr
 └─────────────────┬───────────────────────┘
                   │
 ┌─────────────────▼───────────────────────┐
-│  FastMCP Server (22+ Agent Tools) ⭐    │
+│  FastMCP Server (22+ Agent Tools)      │
 │  ├─ Rule Management (5 tools)          │
 │  ├─ Preset Configuration (5 tools)     │
 │  ├─ Learning System (7 tools)          │
@@ -276,29 +234,27 @@ AFO is built on **Model Context Protocol (MCP)**, exposing all functionality thr
 - **Type-Safe** - Pydantic models ensure data validation
 - **Extensible** - Easy to add new tools and capabilities
 
----
+## Learning System
 
-## 🧠 Learning System
-
-AFO includes an **AI agent-based learning system** that automatically analyzes your firewall's behavior and suggests improvements through MCP tools.
+AFO includes an AI agent-based learning system that automatically analyzes your firewall's behavior and suggests improvements through MCP tools.
 
 ### Features
 
-- 🔍 **Pattern Detection** - AI agents discover attack patterns, false positives, and legitimate traffic
-- 🤖 **LLM-Based Insights** - Uses Ollama to analyze patterns and generate recommendations
-- 🛡️ **Safe Auto-Configuration** - Multiple operating modes with safety validation
-- 📊 **User Feedback** - Learns from your corrections to improve accuracy
-- 💾 **Persistent Memory** - Stores patterns in SQLite database
-- 🔌 **MCP Integration** - 7 dedicated learning tools for agent interaction
+- **Pattern Detection** - AI agents discover attack patterns, false positives, and legitimate traffic
+- **LLM-Based Insights** - Uses Ollama to analyze patterns and generate recommendations
+- **Safe Auto-Configuration** - Multiple operating modes with safety validation
+- **User Feedback** - Learns from your corrections to improve accuracy
+- **Persistent Memory** - Stores patterns in SQLite database
+- **MCP Integration** - 7 dedicated learning tools for agent interaction
 
 ### Operating Modes
 
 | Mode | Description | Auto-Apply | Confidence Threshold |
 |------|-------------|------------|---------------------|
-| **Monitor** | Observes only, never applies | ❌ | N/A |
-| **Cautious** | Very high confidence only | ✅ | >0.9 |
-| **Aggressive** | High confidence insights | ✅ | >0.7 |
-| **Manual** | Requires explicit approval | ❌ | N/A |
+| Monitor | Observes only, never applies | No | N/A |
+| Cautious | Very high confidence only | Yes | >0.9 |
+| Aggressive | High confidence insights | Yes | >0.7 |
+| Manual | Requires explicit approval | No | N/A |
 
 ### Quick Start
 
@@ -328,54 +284,49 @@ get_learning_metrics()
 | `get_learning_metrics` | Get learning system statistics |
 | `configure_learning_mode` | Change operating mode |
 
----
-
-## 🛠️ Tech Stack
+## Technology Stack
 
 ### Core Technologies
 
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![MCP](https://img.shields.io/badge/MCP-Model%20Context%20Protocol-00ADD8?style=flat-square&logo=protocol&logoColor=white)](https://modelcontextprotocol.io/)
-[![FastMCP](https://img.shields.io/badge/FastMCP-2.14.5-00ADD8?style=flat-square&logo=fastapi&logoColor=white)](https://github.com/jlowin/fastmcp)
-[![Textual](https://img.shields.io/badge/Textual-7.5.0-009485?style=flat-square&logo=python&logoColor=white)](https://textual.textualize.io/)
-[![SQLModel](https://img.shields.io/badge/SQLModel-0.0.32-CC2927?style=flat-square&logo=sqlite&logoColor=white)](https://sqlmodel.tiangolo.com/)
-[![Pydantic](https://img.shields.io/badge/Pydantic-2.0+-E92063?style=flat-square&logo=pydantic&logoColor=white)](https://docs.pydantic.dev/)
+- Python 3.10+
+- Model Context Protocol (MCP)
+- FastMCP 2.14.5
+- Textual 7.5.0
+- SQLModel 0.0.32
+- Pydantic 2.0+
 
 ### AI & NLP
 
-[![Ollama](https://img.shields.io/badge/Ollama-Latest-000000?style=flat-square&logo=ollama&logoColor=white)](https://ollama.ai/)
-[![LangChain](https://img.shields.io/badge/LangChain-0.3+-1C3C3C?style=flat-square&logo=chainlink&logoColor=white)](https://www.langchain.com/)
-[![Structlog](https://img.shields.io/badge/Structlog-Latest-FF6B6B?style=flat-square&logo=python&logoColor=white)](https://www.structlog.org/)
+- Ollama
+- LangChain 0.3+
+- Structlog
 
 ### Database & Storage
 
-[![SQLite](https://img.shields.io/badge/SQLite-3-003B57?style=flat-square&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
-[![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.0+-D71F00?style=flat-square&logo=sqlalchemy&logoColor=white)](https://www.sqlalchemy.org/)
+- SQLite 3
+- SQLAlchemy 2.0+
 
-### Testing & Quality
+### Testing
 
-[![Pytest](https://img.shields.io/badge/Pytest-9.0.2-0A9EDC?style=flat-square&logo=pytest&logoColor=white)](https://pytest.org/)
-[![Pytest-Asyncio](https://img.shields.io/badge/Pytest--Asyncio-1.3.0-0A9EDC?style=flat-square&logo=pytest&logoColor=white)](https://github.com/pytest-dev/pytest-asyncio)
+- Pytest 9.0.2
+- Pytest-Asyncio 1.3.0
 
 ### Firewall Backends
 
-[![OPNsense](https://img.shields.io/badge/OPNsense-Latest-D94F00?style=flat-square&logo=opnsense&logoColor=white)](https://opnsense.org/)
-[![nftables](https://img.shields.io/badge/nftables-Latest-FCC624?style=flat-square&logo=linux&logoColor=black)](https://netfilter.org/projects/nftables/)
-[![iptables](https://img.shields.io/badge/iptables-Legacy-FCC624?style=flat-square&logo=linux&logoColor=black)](https://netfilter.org/projects/iptables/)
+- OPNsense
+- nftables
+- iptables
 
-
-## 📚 Documentation
+## Documentation
 
 - [Test Results](./TEST_RESULTS.md) - Comprehensive test verification
 - [Learning System](./docs/LEARNING_SYSTEM.md) - Adaptive learning documentation
 - [Roadmap](./ROADMAP.md) - 7-phase development plan
 - [Planning](./planning/) - Detailed phase documentation
 
----
+## Contributing
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome. Please feel free to submit a Pull Request.
 
 ### Development Setup
 
@@ -399,7 +350,7 @@ python -m pytest tests/ -v
 python -m pytest tests/test_mcp_tools.py -v
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -432,10 +383,7 @@ cat .env | grep OPNSENSE
 AFO_DRY_RUN=1 ./afo
 ```
 
----
-## 📸 Screenshots
-
-<div align="center">
+## Screenshots
 
 ### Main Interface
 <img src="https://github.com/irl-jacob/Agentic-AI-Firewall-Orchestrator/raw/42b73aa083392c4cbc7add56db4e470a1fd47ba4/screenshots/screenshot_20260310_013021.jpg" width="900">
@@ -449,20 +397,13 @@ AFO_DRY_RUN=1 ./afo
 ### Configuration View
 <img src="https://github.com/irl-jacob/Agentic-AI-Firewall-Orchestrator/raw/42b73aa083392c4cbc7add56db4e470a1fd47ba4/screenshots/screenshot_20260310_013411.jpg" width="900">
 
-</div>
-
----
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [FastMCP](https://github.com/jlowin/fastmcp) - Modern MCP server framework
 - [Textual](https://textual.textualize.io/) - Beautiful TUI framework
 - [OPNsense](https://opnsense.org/) - Open source firewall platform
 - [Ollama](https://ollama.ai/) - Local LLM inference
-
-<div align="center">
